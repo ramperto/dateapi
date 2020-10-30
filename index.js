@@ -2,7 +2,7 @@
 
 const express = require('express');
 const app = new express();
-var host = process.env.host || 'localhost';
+var host = process.env.host || '0.0.0.0';
 var port = process.env.port || 3000;
 
 let ts = Date.now();
