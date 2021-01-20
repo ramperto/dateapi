@@ -16,6 +16,9 @@ jobs:
     # A list of available CircleCI docker Convenience Images are available here: https://circleci.com/developer/images/image/cimg/node
     docker:
       - image: google/cloud-sdk
+        auth:
+          username: greenlemon
+          password: $DOCKERHUB_PASSWORD
     steps:
       # Checkout the code as the first step.
       - checkout
