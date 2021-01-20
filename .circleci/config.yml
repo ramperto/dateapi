@@ -25,6 +25,7 @@ jobs:
             echo $GCLOUD_KEY gcloud auth activate-service-account --key-file=-
             gcloud --quiet config set project serious-habitat-281404
             gcloud --quiet config set compute/zone asia-southeast1-b
+            gcloud config set account ramperto01@gmail.com
       - run:
           name: Run cloud builds
           command: gcloud builds submit --config cloudbuild.yaml .
