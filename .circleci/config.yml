@@ -18,7 +18,7 @@ jobs:
       - image: circleci/node:latest
     steps:
       # Checkout the code as the first step.
-     - checkout
+      - checkout
 #      - run:
 #          name: Set up gcloud config
 #          command: |
