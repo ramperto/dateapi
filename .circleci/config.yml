@@ -35,7 +35,6 @@ jobs:
             echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
             curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
             sudo apt-get update && sudo apt-get -y install google-cloud-sdk
-            gcloud auth activate-service-account https://console.cloud.google.com/iam-admin/serviceaccounts/details/109379562180760807065?authuser=6&project=serious-habitat-281404 --key-file=key.json
       - run:
           name: Run cloud builds
           command: gcloud builds submit --config cloudbuild.yaml .
