@@ -37,7 +37,8 @@ jobs:
             sudo apt-get update && sudo apt-get -y install google-cloud-sdk
       - run:
           name: Run cloud builds
-          command: gcloud builds submit --config cloudbuild.yaml .
+          command: ls -al
+          # command: gcloud builds submit --config cloudbuild.yaml .
 
 workflows:
   version: 2.1
