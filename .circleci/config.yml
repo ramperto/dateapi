@@ -37,9 +37,7 @@ jobs:
           command: gcloud builds submit --config cloudbuild.yaml .
       - run:
           name: canary update
-          command: gcloud compute instance-groups managed rolling-action start-update dateapi-group \
-    --version=template=dateapi-backend \
-    --canary-version=template=dateapi-backend,target-size=20
+          command: gcloud compute instance-groups managed rolling-action start-update dateapi-group --version=template=dateapi-backend --canary-version=template=dateapi-backend,target-size=20
 
 workflows:
   version: 2.1
