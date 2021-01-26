@@ -1,6 +1,6 @@
 steps:
-- name: 'asia.gcr.io/cloud-builders/docker'
+- name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'asia.gcr.io/arboreal-parser-294008/dateapi', '.']
-- name: 'asia.gcr.io/cloud-builders/docker'
+- name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'asia.gcr.io/arboreal-parser-294008/dateapi']
 images: ['asia.gcr.io/arboreal-parser-294008/dateapi']
