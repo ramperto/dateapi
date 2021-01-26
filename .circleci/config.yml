@@ -36,6 +36,9 @@ jobs:
             curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
             sudo apt-get update && sudo apt-get -y install google-cloud-sdk
       - run:
+          name: authorize gcloud sdk
+          command: echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account build-953@arboreal-parser-294008.iam.gserviceaccount.com --key-file=-
+      - run:
           name: Run cloud builds
           command: gcloud builds submit --config cloudbuild.yaml .
 
