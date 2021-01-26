@@ -40,6 +40,7 @@ jobs:
           command: | 
             echo $GCLOUD_KEY | gcloud auth activate-service-account build-953@arboreal-parser-294008.iam.gserviceaccount.com --key-file=-
             gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
+            gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
       - run:
           name: Run cloud builds
           command: gcloud builds submit --config cloudbuild.yaml .
