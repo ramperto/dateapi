@@ -30,8 +30,10 @@ jobs:
             echo $ismaya_tag
       - run:
           command: env | grep ismaya
+      - run:
+          command: touch testing && echo $ismaya_tag >> testing
       - run: 
-          command: touch testing && mv testing testing-$ismaya_tag.txt
+          command: mv testing testing-$ismaya_tag.txt && cat testing-$ismaya_tag.txt
       - run:
           command: ls -al && ls -al | grep testing
       # - run:
