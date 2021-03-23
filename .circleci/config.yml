@@ -23,7 +23,8 @@ jobs:
           name: get git branch
           command: git branch
       - run:
-          command: export ismaya_tag=`git branch | awk '{print $5}' | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]'`
+          # command: export ismaya_tag=`git branch | awk '{print $5}' | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]'`
+          command: export ismaya_tag="tagging12"
       - run:
           command: env && echo $ismaya_tag
       - run: 
