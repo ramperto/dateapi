@@ -24,11 +24,11 @@ jobs:
           command: git branch
       - run:
           # command: export ismaya_tag=`git branch | awk '{print $5}' | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]'`
-          command: export ismaya_tag="tagging12"
+          command: export ismaya_tig=$ismaya_tag
       - run:
-          command: env && echo $ismaya_tag
+          command: env | grep ismaya
       - run: 
-          command: touch testing && mv testing testing-$ismaya_tag.txt
+          command: touch testing && mv testing testing-$ismaya_tig.txt
       - run:
           command: ls -al | grep testing
       # - run:
