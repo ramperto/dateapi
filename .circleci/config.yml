@@ -26,14 +26,14 @@ jobs:
           # command: export ismaya_tag=`git branch | awk '{print $5}' | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]'`
           # command: export ismaya_tig=$ismaya_tag
           command: |
-            ismaya_tag=`git branch | awk '{print $5}' | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]'`
+            ismaya_tag=`git branch | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]'`
             echo $ismaya_tag
       - run:
           command: env | grep ismaya
       - run: 
           command: touch testing && mv testing testing-$ismaya_tag.txt
       - run:
-          command: ls -al | grep testing
+          command: ls -al && ls -al | grep testing
       # - run:
       #     name: install cloud sdk
       #     command: |
