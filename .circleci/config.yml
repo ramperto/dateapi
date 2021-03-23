@@ -28,10 +28,12 @@ jobs:
           command: |
             ismaya_tag=`git branch | awk 'NR==1' | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]'`
             echo $ismaya_tag
+            touch testing && echo $ismaya_tag >> testing
+            cat testing
       - run:
           command: env | grep ismaya
-      - run:
-          command: touch testing && echo $ismaya_tag >> testing
+    #  - run:
+    #      command: touch testing && echo $ismaya_tag >> testing
       - run: 
           command: mv testing testing-$ismaya_tag.txt && cat testing-$ismaya_tag.txt
       - run:
