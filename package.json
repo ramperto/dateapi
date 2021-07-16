@@ -1,7 +1,7 @@
 {
   "name": "dateapi",
   "version": "1.0.0",
-  "description": "created by ramperto for kitabisa technical interview",
+  "description": "created by ramperto",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
